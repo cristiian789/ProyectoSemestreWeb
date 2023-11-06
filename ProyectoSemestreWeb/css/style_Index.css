@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image:url(../Images/descuentos-carrito-compras-e-icono-tarjeta_116441-26066.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 30;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-size: 80px;
+    padding: 80px;
+}
+
+.login{
+    text-align: center;
+}
+
+p{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+}
+
+#user{
+    font-family: "FS Kim", Georgia, serif;
+    width: 250px;
+    height: 30px;
+    font-size: 20px;
+    padding: 10px;
+    
+}
+
+#password{
+    font-family: "FS Kim", Georgia, serif;
+    width: 250px;
+    height: 30px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#user::placeholder{
+    text-align: center;
+}
+
+#password::placeholder{
+    text-align: center;
+}
+
+
+.boton{
+    margin: 50px;
+    padding: 15px 200px;
+    font-family: "FS Kim", Georgia, serif;
+    font-weight: 500;
+    background-color: lightblue;
+    color: rgb(5, 5, 5);
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: right;
+}
+
+.boton:hover {
+    background-color: aqua; /* Cambiar el color de fondo al pasar el ratón */
+}
