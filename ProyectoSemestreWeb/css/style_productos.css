@@ -5,17 +5,6 @@
 }
 
 body{
-    
-    /*display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-image:url(../Images/pngtree-e-commerce-concept-shopping-carts-with-digital-devices-promotional-poster-and-image_3904565.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: 30;*/
     background-color: #069CD9;
 }
 
@@ -26,14 +15,14 @@ body{
 h1{
     color: white;
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
     padding: 20px;
 }
 
 h2{
     color: white;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     padding: 20px;
 }
 
@@ -52,7 +41,7 @@ p{
     padding: 10px;
 }
 
-#id{
+.inputs{
     font-family: "FS Kim", Georgia, serif;
     width: 200px;
     height: 30px;
@@ -61,26 +50,14 @@ p{
     
 }
 
-#marca{
-    font-family: "FS Kim", Georgia, serif;
-    width: 250px;
-    height: 30px;
-    font-size: 20px;
-    padding: 10px;
-}
-
-#id::placeholder{
-    text-align: center;
-}
-
-#marca::placeholder{
+.inputs::placeholder{
     text-align: center;
 }
 
 
 .boton{
     margin: 50px;
-    padding: 15px 200px;
+    padding: 15px 100px;
     font-family: "FS Kim", Georgia, serif;
     font-weight: 500;
     background-color: lightblue;

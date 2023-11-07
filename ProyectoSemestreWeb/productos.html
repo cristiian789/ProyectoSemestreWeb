@@ -13,15 +13,16 @@
     <h3>Item para consultar</h3>
     <section class="botones">
         <p>Id</p>
-        <input type="number" placeholder="Ingresa id" Id="id"></input>
+        <input type="number" placeholder="Ingresa id" class="inputs" id="id"></input>
         <p>Marca</p>
-        <input type="password" placeholder="Ingresa Marca" id="marca"></input>
+        <input type="password" placeholder="Ingresa Marca" class="inputs" id="marca"></input>
         <p id="errores"></p>
         <button class="boton" onclick="">CONSULTAR</button>
-        <button class="boton" onclick="mostrarBoton()">MOSTRAR PRODUCTOS</button>
-        <button class="boton" onclick="limpiarContenido()">Limpar</button>
+        <button class="boton" onclick="mostrarBoton1()">MOSTRAR PRODUCTOS</button>
+        <button class="boton" onclick="limpiarContenido()">LIMPIAR</button>
         <div id="contenedor"></div>
-
+        <button class="boton" id="anterior" onclick="paginaAnterior()">Anterior</button>
+        <button class="boton" id="siguiente" onclick="paginaSiguiente()">Siguiente</button>
     </section>
 
     <script src="js/script_productos.js" type="text/javascript"></script>

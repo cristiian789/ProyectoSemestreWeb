@@ -36,7 +36,7 @@ p{
     padding: 10px;
 }
 
-#user{
+.inputs{
     font-family: "FS Kim", Georgia, serif;
     width: 250px;
     height: 30px;
@@ -45,19 +45,7 @@ p{
     
 }
 
-#password{
-    font-family: "FS Kim", Georgia, serif;
-    width: 250px;
-    height: 30px;
-    font-size: 20px;
-    padding: 10px;
-}
-
-#user::placeholder{
-    text-align: center;
-}
-
-#password::placeholder{
+.inputs::placeholder{
     text-align: center;
 }
 

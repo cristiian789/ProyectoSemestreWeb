@@ -161,32 +161,56 @@ const productos = [
     ]
     
     // Continuar con más objetos de productos...
+    const elementosPorPagina = 10;
+    let paginaActual = 1;
 
-
-function mostrarBoton() {
-    const divobjetos = document.getElementById("contenedor");
+    function mostrarBoton(page) {
+        const divobjetos = document.getElementById("contenedor");
+        const startIndex = (page - 1) * elementosPorPagina;
+        const endIndex = startIndex + elementosPorPagina;
     
-    divobjetos.innerHTML = "";
-
-    // Recorrer los objetos y crear elementos <div> para cada uno
-    productos.forEach(function (producto) {
-        const productoDiv = document.createElement("div"); // Contenedor div para el objeto
-        productoDiv.className = "listadoJson"; // Aplicar la clase objeto al contenedor
-
-        productoDiv.innerHTML = `
-            <p>ID: ${producto.id}</p>
-            <p>Nombre: ${producto.nombre}</p>
-            <p>Precio: $${producto.precio}</p>
-            <p>Categoría: ${producto.categoria}</p>
-            <p>Peso: ${producto.peso}</p>
-            <p>Descripción: ${producto.descripcion}</p>
-            
-        `;
-
-        // Agregar el contenedor div al contenedor principal
-        divobjetos.appendChild(productoDiv);
-    });
-}
+        divobjetos.innerHTML = "";
+    
+        // Recorrer los objetos y crear elementos <div> para cada uno
+        for (let i = startIndex; i < Math.min(endIndex, productos.length); i++) {
+            const producto = productos[i];
+            const productoDiv = document.createElement("div"); // Contenedor div para el objeto
+            productoDiv.className = "listadoJson"; // Aplicar la clase objeto al contenedor
+    
+            productoDiv.innerHTML = `
+                <p>ID: ${producto.id}</p>
+                <p>Nombre: ${producto.nombre}</p>
+                <p>Precio: $${producto.precio}</p>
+                <p>Categoría: ${producto.categoria}</p>
+                <p>Peso: ${producto.peso}</p>
+                <p>Descripción: ${producto.descripcion}</p>
+            `;
+    
+            // Agregar el contenedor div al contenedor principal
+            divobjetos.appendChild(productoDiv);
+        }
+    }
+    
+    // Función para ir a la página anterior
+    function paginaAnterior() {
+        if (paginaActual > 1) {
+            paginaActual--;
+            mostrarBoton(paginaActual);
+        }
+    }
+    
+    // Función para ir a la página siguiente
+    function paginaSiguiente() {
+        const totalPaginas = Math.ceil(productos.length / elementosPorPagina);
+        if (paginaActual < totalPaginas) {
+            paginaActual++;
+            mostrarBoton(paginaActual);
+        }
+    }
+    
+    function mostrarBoton1() {
+        mostrarBoton(1);
+    }
 
 
 function limpiarContenido() {
