@@ -10,8 +10,8 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image:url(../Images/descuentos-carrito-compras-e-icono-tarjeta_116441-26066.avif);
-    background-size: cover;
+    /*background-image:url(../Images/descuentos-carrito-compras-e-icono-tarjeta_116441-26066.avif);
+    */background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -29,11 +29,21 @@ h1{
     text-align: center;
 }
 
-p{
+label{
     color: black;
     text-align: center;
     font-size: 30px;
     padding: 10px;
+}
+
+p{
+    text-align: center;
+    font-size: 20px; 
+}
+
+.cargando{
+    text-align: center;
+    font-size: 30px;
 }
 
 .inputs{

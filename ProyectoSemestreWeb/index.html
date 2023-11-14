@@ -8,6 +8,29 @@
 </head>
 <body>
     <h1>Supermercados Ecommerce</h1>
+    
+    <form class="login" id="loginform" action=>
+        <label>Usuario</label>
+        <br>
+        <input type="text" placeholder="Ingresa Usuario" class="inputs" id="user" required></input>
+        <br>
+        <label>Contraseña</label>
+        <br>
+        <input type="password" placeholder="Ingresa contraseña" class="inputs" id="password" required></input>
+        <br>
+        <p id="error0"></p>
+        <p id="error1"></p>
+        <p id="error2"></p>
+        <p id="error3"></p>
+        <p id="error4"></p>
+         <!-- <button class="boton" onclick="ingresar()">LOGIN</button> -->
+        <input type="submit" class="boton" value="INGRESAR">
+        <p id="carga" class="cargando"></p>
+        <!--Requiered atributo para que no se envie vacio -->
+    </form>
+
+
+    <!--
     <section class="login">
         <p>Usuario</p>
         <input type="text" placeholder="Ingresa Usuario" class="inputs" id="user"></input>
@@ -16,6 +39,7 @@
         <p id="errores"></p>
         <button class="boton" onclick="login()">LOGIN</button>
     </section>
+    -->
     
 
 
