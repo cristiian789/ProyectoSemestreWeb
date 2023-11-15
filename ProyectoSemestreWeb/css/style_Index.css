@@ -6,23 +6,23 @@
 
 body{
     
-    display: flex;
+    /*display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    /*background-image:url(../Images/descuentos-carrito-compras-e-icono-tarjeta_116441-26066.avif);
-    */background-size: cover;
+    */background-image:url(../Images/pngtree-simple-gradient-e-commerce-web-page-image_21108.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    opacity: 30;
+    
 }
 
 h1{
     color: white;
     text-align: center;
     font-size: 80px;
-    padding: 80px;
+    padding: 40px;
 }
 
 .login{
@@ -62,7 +62,7 @@ p{
 
 .boton{
     margin: 50px;
-    padding: 15px 200px;
+    padding: 15px 150px;
     font-family: "FS Kim", Georgia, serif;
     font-weight: 500;
     background-color: lightblue;

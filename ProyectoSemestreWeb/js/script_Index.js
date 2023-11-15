@@ -89,6 +89,13 @@ datica.addEventListener("input", e =>{
 
 })
 
+function limpiar(){
+  let user = datica.querySelector("#user");
+  let pass = datica.querySelector("#password");
+
+  user.value="";
+  pass.value ="";
+}
 
 function validaruser(user, pass){
 

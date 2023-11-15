@@ -1,0 +1,28 @@
+clopez@gmail.com
+ {
+    "usuario": "clopez@gmail.com",
+    "password": "Casa7890*+",
+  },
+  {
+    "usuario": "clopez2@gmail.com",
+    "password": "Admin7890*+",
+  },
+  {
+    "usuario": "clopez3@gmail.com",
+    "password": "Admin7890*+",
+  }
+]
+
+
+ {
+        "id": 1,
+	"imagenURL": https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/14-Leche.png,
+	"marca": Clopez,
+        "nombre": "Leche",
+        "precio": 1.99,
+        "categoria": "Lácteos",
+        "peso": "1 litro",
+        "descripcion": "Leche entera fresca"
+	"Stock": 20,
+	"Descuento": 10%
+    },
