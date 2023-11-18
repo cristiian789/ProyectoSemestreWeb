@@ -600,113 +600,131 @@ const productos = [
         }
 ];   
 
-    
-    
-    // Continuar con más objetos de productos...
-    const elementosPorPagina = 10;
-    let paginaActual = 1;
-
-   /* function mostrarBoton(page) {
-        const divobjetos = document.getElementById("contenedor");
-        const startIndex = (page - 1) * elementosPorPagina;
-        const endIndex = startIndex + elementosPorPagina;
-    
-        divobjetos.innerHTML = "";
-    
-        // Recorrer los objetos y crear elementos <div> para cada uno
-        for (let i = startIndex; i < Math.min(endIndex, productos.length); i++) {
-            const producto = productos[i];
-            const productoDiv = document.createElement("div"); // Contenedor div para el objeto
-            productoDiv.className = "listadoJson"; // Aplicar la clase objeto al contenedor
-    
-            const imagenElement = document.createElement("img");
-            imagenElement.src = producto.imagenURL;
-            imagenElement.alt = producto.nombre;
-            imagenElement.className = "imagenRedonda";
-
-           
-
-            productoDiv.innerHTML = `
-                <p>ID: ${producto.id}</p>
-                <p>Marca: ${producto.marca}</p>
-                <p>Nombre: ${producto.nombre}</p>
-                <p>Precio: $${producto.precio}</p>
-                <p>Categoría: ${producto.categoria}</p>
-                <p>Peso: ${producto.peso}</p>
-                <p>Descripción: ${producto.descripcion}</p>
-                <p>Stock: ${producto.Stock}</p>
-                <p>Descuento: ${producto.Descuento}</p>
-            `;
-    
-            // Agregar el contenedor div al contenedor principal
-            divobjetos.appendChild(productoDiv);
-           
-        }
-    }*/
-
-    function mostrarBoton(page) {
-        const divobjetos = document.getElementById("contenedor");
-        const startIndex = (page - 1) * elementosPorPagina;
-        const endIndex = startIndex + elementosPorPagina;
-    
-        divobjetos.innerHTML = "";
-    
-        // Recorrer los objetos y crear elementos <div> para cada uno
-        for (let i = startIndex; i < Math.min(endIndex, productos.length); i++) {
-            const producto = productos[i];
-            const productoDiv = document.createElement("div"); // Contenedor div para el objeto
-            productoDiv.className = "listadoJson"; // Aplicar la clase objeto al contenedor
-    
-            const imagenElement = document.createElement("img");
-            imagenElement.src = producto.imagenURL;
-            imagenElement.alt = producto.nombre;
-            imagenElement.className = "imagenRedonda";
-    
-            productoDiv.appendChild(imagenElement); // Agregar la imagen al contenedor
-    
-            const contenidoDiv = document.createElement("div");
-            contenidoDiv.innerHTML = `
-                <p>ID: ${producto.id}</p>
-                <p>Marca: ${producto.marca}</p>
-                <p>Nombre: ${producto.nombre}</p>
-                <p>Precio: $${producto.precio}</p>
-                <p>Categoría: ${producto.categoria}</p>
-                <p>Peso: ${producto.peso}</p>
-                <p>Descripción: ${producto.descripcion}</p>
-                <p>Stock: ${producto.Stock}</p>
-                <p>Descuento: ${producto.Descuento}</p>
-            `;
-    
-            productoDiv.appendChild(contenidoDiv); // Agregar el contenido al contenedor
-    
-            // Agregar el contenedor div al contenedor principal
-            divobjetos.appendChild(productoDiv);
-        }
+  
+/*
+const productos = [
+    {
+        "id": 1,
+        "imagenURL": "https://statics-cuidateplus.marca.com/cms/styles/natural/azblob/lecheok_0.jpg.webp?itok=0XaoEZv0",
+        "marca": "Clopez",
+        "nombre": "Leche",
+        "precio": 1.99,
+        "categoria": "Lácteos",
+        "peso": "1 litro",
+        "descripcion": "Leche entera fresca",
+        "Stock": 20,
+        "Descuento": "10%"
+    },
+    {
+        "id": 50,
+        "imagenURL": "https://exitocol.vtexassets.com/arquivos/ids/19740120/Pasta-Spaghetti-Multicereal-Integral-X-500-gr-769695_a.jpg?v=638308609543000000",
+        "marca": "WholeWheat",
+        "nombre": "Pasta integral",
+        "precio": 2.19,
+        "categoria": "Pasta",
+        "peso": "500 gramos",
+        "descripcion": "Pasta de trigo integral",
+        "Stock": 26,
+        "Descuento": "8%"
     }
+];
+*/
+/*
+function creartabla(){
+
     
-    // Función para ir a la página anterior
-    function paginaAnterior() {
-        if (paginaActual > 1) {
-            paginaActual--;
-            mostrarBoton(paginaActual);
-        }
+    let tabla = "<table>";
+    for(let i = 0; i < productos.length ; i++){
+    
+    
+    let fila = "<tr><th>Producto</th><td>"
+    fila += productos[i].id;
+    fila += "</td></tr>"
+
+    fila += "<tr><th>Imagen</th><td>"
+    fila += productos[i].imagenURL;
+    fila += "</td></tr>"
+
+    tabla += fila;
+    console.log(tabla);
+
     }
+    tabla += "</table>";
+    document.getElementById("contenedor").innerHTML = tabla;
+}
+*/
+
+/****************Version2**************************/
+
+
+let page = 0; // Página actual
+const cantidad = 10; // Cantidad de productos por página
+
+
+function tabla() {
     
-    // Función para ir a la página siguiente
-    function paginaSiguiente() {
-        const totalPaginas = Math.ceil(productos.length / elementosPorPagina);
-        if (paginaActual < totalPaginas) {
-            paginaActual++;
-            mostrarBoton(paginaActual);
-        }
+    const tablaHTML = document.getElementById("tablahtml");
+    //tablaHTML.innerHTML ="";
+
+    const inicio = page * cantidad;
+    const fin = (page + 1) * cantidad;
+
+    //for (let i = 0; i < productos.length; i++) {
+    for (let i = inicio; i < fin && i < productos.length; i++) {
+        let fila = "";
+        const produc = productos[i];
+
+        fila += '<tr>';
+        fila += '<td>' + produc.id + '</td>';
+        //fila += '<td>' + produc.imagenURL + '</td>';
+        fila += '<td><img class="imagenRedonda" src="' + produc.imagenURL + '" alt="Imagen del producto"></td>';
+        fila += '<td>' + produc.marca + '</td>';
+        fila += '<td>' + produc.nombre + '</td>';
+        fila += '<td>' + produc.precio + '</td>';
+        fila += '<td>' + produc.categoria + '</td>';
+        fila += '<td>' + produc.peso + '</td>';
+        fila += '<td>' + produc.descripcion + '</td>';
+        fila += '<td>' + produc.stock + '</td>';
+        fila += '<td>' + produc.descuento + '</td>';
+        fila += '<td><button> ver mas </button></td>';
+        fila += '</tr>';
+
+        tablaHTML.innerHTML += fila;
     }
-    
-    function mostrarBoton1() {
-        mostrarBoton(1);
+   
+}
+
+
+
+let botonanterior = document.getElementById("anterior");
+
+botonanterior.addEventListener("click", e =>{
+
+    if(page>0){
+        page--;
+        tabla();
+        pagina.innerHTML = page + 1;
     }
 
 
-function limpiarContenido() {
-    const contenedorObjetos = document.getElementById("contenedor");
-    contenedorObjetos.innerHTML = ""; // Limpia el contenido del div
+});
+
+
+let botonsiguiente = document.getElementById("siguiente");
+
+botonsiguiente.addEventListener("click", e =>{
+    const totalPaginas = Math.ceil(productos.length / cantidad);
+    if (page < totalPaginas - 1) {
+        page++;
+        tabla();
+        pagina.innerHTML = page + 1;
+    }
+});
+
+
+
+function limpiarContenido(){
+    let contenedor = document.getElementById("contenedor");
+
+    contenedor.innerHTML = "";
 }
