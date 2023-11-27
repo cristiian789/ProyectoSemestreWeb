@@ -620,11 +620,12 @@ pagina.innerHTML = page;
 
 function tabla(filtro) {
 
+    /*
     const filtroId = document.getElementById("id");
     const filtroMarca = document.getElementById("marca");
     filtroId.value = "";
     filtroMarca.value = "";
-    
+    */
 
     
     const tablaHTML = document.getElementById("tablahtml");
@@ -725,7 +726,10 @@ botonsiguiente.addEventListener("click", e =>{
 
 function limpiarContenido(){
     let tablita = document.getElementById("tablahtml");
-
+    const filtroId = document.getElementById("id");
+    const filtroMarca = document.getElementById("marca");
+    filtroId.value = "";
+    filtroMarca.value = "";
     tablita.innerHTML = "";
 }
 
@@ -828,9 +832,13 @@ function actualizarProducto(index) {
                  const filtroId = document.getElementById("id").value.toLowerCase();
                  const filtroMarca = document.getElementById("marca").value.toLowerCase();
                  const filtroCategoria = document.getElementById("desplegableCategorias").value.toLowerCase();
+                 console.log(filtroId)
+                 console.log(filtroMarca)
+                 console.log(filtroCategoria)
 
                  if(filtroId.trim() !== "" || filtroCategoria.trim() !== "" || filtroMarca.trim() !== "" ){
                     tabla(datafiltrada)
+                    console.log("fil"+datafiltrada)
                  }else{
                     tabla();
                  }
