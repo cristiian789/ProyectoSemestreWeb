@@ -4,6 +4,8 @@
     padding: 0;
 }
 
+
+/***************** BODY *********************/
 body{
     background-color: #069CD9;
 }
@@ -34,6 +36,9 @@ h3{
 }
 
 
+/***************** SECTION *********************/
+
+
 p{
     color: black;
     text-align: center;
@@ -50,14 +55,29 @@ p{
     
 }
 
+.desplegable{
+    
+        font-family: "FS Kim", Georgia, serif;
+        width: 200px;
+        height: 30px;
+        font-size: 18px;
+        padding: 1px;
+    
+}
+
 .inputs::placeholder{
     text-align: center;
+}
+
+.errores{
+    font-size: 20px;
+    color: black;
 }
 
 
 .boton{
     margin: 50px;
-    padding: 15px 100px;
+    padding: 15px 50px;
     font-family: "FS Kim", Georgia, serif;
     font-weight: 500;
     background-color: lightblue;
@@ -73,24 +93,29 @@ p{
 .boton:hover {
     background-color: aqua; /* Cambiar el color de fondo al pasar el ratón */
 }
-/*
-#contenedor{
-    /*display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+
+/***************** TABLA *********************/
+
+table {
+    width: 100%;
+    border-collapse: collapse; /*Ajustar la tabla*/
 }
-*/
-  
-.listadoJson{
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px; 
-    
+
+
+/* Estilos específicos para los th (encabezados) */
+.contenedor th {
+    padding: 20px;
+    border: 1px solid black;
+    font-size: 20px;
 }
+
+
 .imagenRedonda{
     /*border-radius: 50%;*/
-    width: 200px;
-    height: 200px;
-    padding: 30px;
+    width: 160px;
+    height: 160px;
+    padding: 5px;
 }
 
 
@@ -101,7 +126,85 @@ th{
 }
 
 td{
-    padding: 20px;
+    padding: 17px;
     border: 1px solid black;
-    font-size: 18px;
+    font-size: 16px;
 } 
+
+
+
+/***************** MODAL *********************/
+
+.producto{
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+.modalcontainer{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+     
+}
+
+.modalcontenido{
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px;
+    width: 30%; 
+    height: 80%;
+   
+}
+
+.imagenmodel{
+    width: 110px;
+    height: 110px;
+    margin: 10PX;
+}
+
+
+.botonmodel{
+    margin: 10px;
+    padding: 15px 20px;
+    font-family: "FS Kim", Georgia, serif;
+    font-weight: 500;
+    background-color: lightblue;
+    color: rgb(5, 5, 5);
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: right;
+}
+
+.btnvermas{
+    margin: 10px;
+    padding: 15px 20px;
+    font-family: "FS Kim", Georgia, serif;
+    font-weight: 500;
+    background-color: lightblue;
+    color: rgb(5, 5, 5);
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: right;
+}
+
+.inputproduc{
+    text-align: center;
+}
+
+
+.palabra{
+    color: #069CD9;
+}
+

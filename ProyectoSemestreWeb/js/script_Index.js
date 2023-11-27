@@ -125,7 +125,7 @@ function ingresar() {
           setTimeout(() => {
             mensajeCarga.innerHTML = "";
             resolve(location.href = "productos.html");
-          }, 3000);
+          }, 2000);
         });
       }else{
       console.log("Error de user")
