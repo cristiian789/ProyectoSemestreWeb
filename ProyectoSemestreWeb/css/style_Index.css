@@ -4,19 +4,22 @@
     padding: 0;
 }
 
+
+/*
 body{
     
-    /*display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    */background-image:url(../Images/pngtree-simple-gradient-e-commerce-web-page-image_21108.jpg);
+    background-image:url(../Images/pngtree-simple-gradient-e-commerce-web-page-image_21108.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     
 }
+
 
 h1{
     color: white;
@@ -25,9 +28,17 @@ h1{
     padding: 40px;
 }
 
-.login{
+.login {
     text-align: center;
+    max-width: 800px;  Ajustamos el ancho máximo 
+    margin: 50px auto;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 80px;  Ajustamos el espacio interno 
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 label{
     color: black;
@@ -61,20 +72,104 @@ p{
 
 
 .boton{
-    margin: 50px;
-    padding: 15px 150px;
-    font-family: "FS Kim", Georgia, serif;
-    font-weight: 500;
-    background-color: lightblue;
-    color: rgb(5, 5, 5);
+    padding: 15px 30px;
+    font-weight: bold;
+    background-color: #3498db;
+    color: white;
     border: none;
-    border-radius: 500px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
-    text-align: right;
+    display: inline-block;
 }
 
 .boton:hover {
-    background-color: aqua; /* Cambiar el color de fondo al pasar el ratón */
+    background-color: aqua; /* Cambiar el color de fondo al pasar el ratón
+}
+*/ 
+
+/*************/
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(../Images/tecnologia-digital-compras-linea-icono-sobre-fondo-azul-marketing-tiendas-linea-comercio-electronico_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: "FS Kim", Georgia, serif;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 60px; /* Unidad 'em' para mayor consistencia */
+    padding: 40px;
+    margin: 0;
+}
+
+.login {
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 40px; /* Reducimos el espacio interno para mantener la proporción */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    color: black;
+    text-align: center;
+    font-size: 1.5em; /* Unidad 'em' para mayor consistencia */
+    padding: 10px;
+    display: block;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em; /* Unidad 'em' para mayor consistencia */
+    margin: 10px 0;
+}
+
+.cargando {
+    text-align: center;
+    font-size: 1.5em; /* Unidad 'em' para mayor consistencia */
+    margin-top: 20px;
+}
+
+.inputs {
+    font-family: "FS Kim", Georgia, serif;
+    width: 100%; /* Cambiamos el ancho al 100% para mayor flexibilidad */
+    height: 40px;
+    font-size: 1em; /* Unidad 'em' para mayor consistencia */
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.inputs::placeholder {
+    text-align: center;
+}
+
+.boton {
+    padding: 15px 30px;
+    font-weight: bold;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.boton:hover {
+    background-color: #2980b9; /* Ajustamos el color al pasar el ratón */
 }

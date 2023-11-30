@@ -153,14 +153,19 @@ td{
 }
 
 .modalcontenido{
-    background-color: white;
+   /* background-color: white;*/
+    background-color: rgba(16, 221, 228, 0.9); /* Fondo blanco con 90% de opacidad */
     margin: 5% auto;
     padding: 20px;
     border: 1px;
     width: 30%; 
-    height: 80%;
-   
+    height: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadiendo una sombra suave */
+    border-radius: 8px; /* Añadiendo esquinas redondeadas */
+    max-width: 400px; /* Estableciendo un ancho máximo */
 }
+
+
 
 .imagenmodel{
     width: 110px;
@@ -182,11 +187,12 @@ td{
     transition: background-color 0.3s ease;
     text-decoration: none;
     text-align: right;
+    font-size: 18px;
 }
 
 .btnvermas{
     margin: 10px;
-    padding: 15px 20px;
+    padding: 10px 10px;
     font-family: "FS Kim", Georgia, serif;
     font-weight: 500;
     background-color: lightblue;
@@ -196,15 +202,18 @@ td{
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
-    text-align: right;
+    text-align: center;
 }
 
 .inputproduc{
     text-align: center;
+    padding: 2px;
+    font-size: 15px;
 }
 
 
 .palabra{
-    color: #069CD9;
+    color: black;
+    
 }
 
