@@ -97,9 +97,10 @@ p{
 
 /***************** TABLA *********************/
 
-table {
+table{
     width: 100%;
     border-collapse: collapse; /*Ajustar la tabla*/
+    
 }
 
 
@@ -154,7 +155,7 @@ td{
 
 .modalcontenido{
    /* background-color: white;*/
-    background-color: rgba(16, 221, 228, 0.9); /* Fondo blanco con 90% de opacidad */
+    background-color: rgb(118, 201, 201); /* Fondo blanco con 90% de opacidad */
     margin: 5% auto;
     padding: 20px;
     border: 1px;

@@ -51,6 +51,11 @@ Botón de actualizar.
 Botón de regresar.
 
 
+## Conclusiones
+
+El proyecto "Fundamentos Web" destaca por su cuidadoso diseño y desarrollo de una aplicación web estática, enfocándose en la seguridad del ingreso, experiencia intuitiva de lista de elementos con paginación y filtros, y exploración detallada con transiciones fluidas. La atención a detalles y compromiso con principios fundamentales resaltan su solidez, proporcionando una base robusta para mejoras y aprendizaje continuo.
+
+
 ## ¿Necesitas Ayuda?
 
 Si surge alguna pregunta o necesitas asistencia, revisa la sección de Issues para encontrar problemas previos o crear uno nuevo.

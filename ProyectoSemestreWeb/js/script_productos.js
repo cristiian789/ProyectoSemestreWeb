@@ -835,6 +835,15 @@ function actualizarProducto(index) {
     let nuevostock = document.getElementById('stockproduc').value;
     let nuevodescuento = document.getElementById('descuentoproduc').value;
 
+    if (nuevoid.trim() === "" || nuevomarca.trim() === "" || nuevonombre.trim() === "" ||
+    nuevoprecio.trim() === "" || nuevocategoria.trim() === "" || nuevopeso.trim() === "" || 
+    nuevodescripcion.trim() === "" ||    nuevostock.trim() === "" || nuevodescuento.trim() === "") {
+        // Muestra un mensaje de error o realiza alguna acción indicando que los campos están vacíos
+        alert("Por favor, completa todos los campos.");
+        console.log("Por favor, completa todos los campos.")
+    }else {
+
+    
     console.log(nuevonombre)
     productos[index].id = nuevoid;
     productos[index].marca = nuevomarca;
@@ -875,46 +884,12 @@ function actualizarProducto(index) {
                  }
                  page =0;
 
-                 /*
-                 filtrico = filtro();
-                 console.log(filtrico)
-                if(datafiltrada === ""){
-                    console.log("datafiltrada sin info")
-                    tabla();
-                 }else{
-                    console.log("datafiltrada con info")
-                    tabla(datafiltrada)
-                 }
-                 /*
-                 idpru = elementossele.id;
-                 tabla(datafiltrada)
-                 console.log(idpru)
-                 */
+                 
         }, 1500);
     });
 
     
-    /*
-    const promesaActualizacion = new Promise((resolve) => {
-        setTimeout(() => {
-            // Resuelve la promesa después de 1.5 segundos
-            resolve(actualizarProducto);
-            cerrarModal()
-            tabla();
-        }, 1500);
-    });
-
-    // Actualiza el producto después de resolver la promesa
-    promesaActualizacion.then((actualizarProducto) => {
-        for (let i = 0; i < productos.length; i++) {
-            if (productos[i].id === elementossele.id) {
-                productos[i] = elementossele;
-            }
-        }
-        // Puedes realizar acciones adicionales después de la actualización, si es necesario
-        console.log("ACTUA", promesaActualizacion);
-    });
-*/
+}
     
 }
 
@@ -942,99 +917,7 @@ function cerrarModal() {
 
 /****************FILTROS**************************/
 
-/*
-function filtro() {
-    
-    let filtroId = document.getElementById("id").value;
-    let filtroMarca = document.getElementById("marca").value;
-    let filtroCategoria = document.getElementById("categoria").value;
-    console.log(filtroId)
-    console.log(filtroMarca)
-    console.log(filtroCategoria)
-    if(filtroId === "" && filtroMarca === "" && filtroCategoria === ""){
-        alert("No se puede buscar sin ningun campo")
 
-    }else{
-        tablafiltro(filtroId,filtroMarca,filtroCategoria);
-    }
-    
-   
-
-}
-
-function tablafiltro(filtroId,filtroMarca,filtroCategoria) {
-    let tablaHTML = document.getElementById("tablahtml");
-    tablaHTML.innerHTML = "";
-    console.log("hola")
-
-    for (let i = 0; i  < productos.length; i++) {
-        const produc = productos[i];
-
-        //Buena practica convertir a minusculas para comparar
-        
-            let marca = filtroMarca.toLowerCase();
-            console.log("marcaminus"+marca)
-
-            let categoria = filtroCategoria.toLowerCase();
-            console.log("categoriaminus"+categoria)
-
-        
-            if(parseInt(filtroId) === produc.id || marca === produc.marca.toLowerCase() || categoria === produc.categoria.toLowerCase()){ 
-                console.log("2")      
-                let fila = "";
-                fila += '<tr>';
-                fila += '<td>' + produc.id + '</td>';
-                fila += '<td><img class="imagenRedonda" src="' + produc.imagenURL + '" alt="Imagen del producto"></td>';
-                fila += '<td>' + produc.marca + '</td>';
-                fila += '<td>' + produc.nombre + '</td>';
-                fila += '<td>' + produc.precio + '</td>';
-                fila += '<td>' + produc.categoria + '</td>';
-                fila += '<td>' + produc.peso + '</td>';
-                fila += '<td>' + produc.descripcion + '</td>';
-                fila += '<td>' + produc.Stock + '</td>';
-                fila += '<td>' + produc.Descuento + '</td>';
-                fila += '<td><button class="btnvermas" onclick="mostrarModal(' + i + ')">Ver más</button></td>';
-                fila += '</tr>';
-                
-    
-                tablaHTML.innerHTML += fila;
-               
-            }
-    
-     }
-        
-   
-}
-*/
-
-/*
-function cargarDesplegable() {
-   
-    let desplegableCategorias = document.getElementById("desplegableCategorias");
-    desplegableCategorias.innerHTML = "";
-
-    let opcionVacia = document.createElement("option");
-    opcionVacia.value = "";
-    opcionVacia.text = "Seleccionar categoría";
-    desplegableCategorias.appendChild(opcionVacia);
-
-    // Agrega opciones al desplegable por cada categoría
-    for (let i = 0; i < productos.length; i++) {
-        let produc = productos[i];
-        
-        // Crea un nuevo elemento <option>
-        let opcion = document.createElement("option");
-
-        // Asigna el valor y el texto de la opción con la categoría
-        opcion.value = produc.categoria;
-        opcion.text = produc.categoria;
-
-        // Agrega la opción al desplegable
-        desplegableCategorias.appendChild(opcion);
-    }
-
-}
-*/
 function cargarDesplegable() {
     let desplegableCategorias = document.getElementById("desplegableCategorias");
     desplegableCategorias.innerHTML = "";
@@ -1044,33 +927,22 @@ function cargarDesplegable() {
     opcionVacia.text = "Seleccionar categoría";
     desplegableCategorias.appendChild(opcionVacia);
 
-    // Utiliza un conjunto para almacenar categorías únicas
-    let categoriasUnicas = new Set();
+    let categoriasArray = [];
 
-    // Recorre el arreglo de productos y agrega categorías al conjunto
     for (let i = 0; i < productos.length; i++) {
         let produc = productos[i];
-        categoriasUnicas.add(produc.categoria);
-    }
+        if (!categoriasArray.includes(produc.categoria)) {
+            categoriasArray.push(produc.categoria);
 
-    // Convierte el conjunto a un array para poder iterar sobre él
-    let categoriasArray = Array.from(categoriasUnicas);
+            let opcion = document.createElement("option");
+            opcion.value = produc.categoria;
+            opcion.text = produc.categoria;
 
-    // Agrega opciones al desplegable por cada categoría única
-    for (let i = 0; i < categoriasArray.length; i++) {
-        let categoria = categoriasArray[i];
-        
-        // Crea un nuevo elemento <option>
-        let opcion = document.createElement("option");
-
-        // Asigna el valor y el texto de la opción con la categoría única
-        opcion.value = categoria;
-        opcion.text = categoria;
-
-        // Agrega la opción al desplegable
-        desplegableCategorias.appendChild(opcion);
+            desplegableCategorias.appendChild(opcion);
+        }
     }
 }
+
 
 
 
