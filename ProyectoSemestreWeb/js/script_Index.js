@@ -19,6 +19,7 @@ User = [
 let datica = document.getElementById("loginform")
 console.log(datica)
 
+    let passcorreo = false;
     let passlength = false;
     let passletras = false;
     let passmayus = false;
@@ -38,7 +39,7 @@ datica.addEventListener("input", e =>{
     if ( user.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) ) {
       error0.textContent = "Si es un correo"
       error0.style.color = "green";
-      passlength =true;
+      passcorreo =true;
     } else {
       error0.textContent = "No es un correo Permitido"
       error0.style.color = "red";
@@ -106,8 +107,8 @@ function validaruser(user, pass){
         }
     }
     console.log("ACCESO NO PERMITIDO")
-    alert("Usuario o contraseña incorrecto")
-    return false;
+    //alert("Usuario o contraseña incorrecto")
+    //return false;
     
 
 }
@@ -118,7 +119,7 @@ function ingresar() {
   let user = datica.user.value;
   let mensajeCarga = datica.querySelector("#carga");
 
-  if (passlength && passletras && passmayus && passnumeros) {
+  if (passcorreo && passlength && passletras && passmayus && passnumeros) {
       if(validaruser(user, pass)){
         mensajeCarga.innerHTML = "Cargando....";
         return new Promise((resolve, reject) => {
@@ -128,10 +129,10 @@ function ingresar() {
           }, 2000);
         });
       }else{
-      console.log("Error de user")
+        alert("Usuario o contraseña incorrecto")
       }
     }else{
-    console.log("Error de campos de validacion")
+    alert("Error de campos de validacion")
     }
 
 }
